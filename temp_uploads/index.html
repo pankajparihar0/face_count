@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Registration with Webcam Capture</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Left side: Registration Form -->
+    <div class="form-section">
+      <h2>User Registration</h2>
+      <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required />
+
+        <div class="button-row">
+          <button type="button" id="openCameraBtn"> Open Camera</button>
+          <button type="button" id="captureBtn" disabled> Capture Image</button>
+          <button type="submit" id="submitBtn" disabled>Submit</button>
+        </div>
+
+        <video id="video" autoplay playsinline style="display:none;"></video>
+
+        <div id="previewContainer"></div>
+      </form>
+    </div>
+
+    <!-- Right side: Table -->
+    <div class="table-section">
+      <h2>Registered Users</h2>
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Images</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <canvas id="canvas" style="display:none;"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
