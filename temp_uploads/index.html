@@ -12,8 +12,9 @@
     <div class="form-section">
       <h2>User Registration</h2>
       <form id="registerForm">
-        <label for="username">Username:</label>
+        <label for="username"><b>Username:</b></label>
         <input type="text" id="username" required />
+        <video id="video" autoplay playsinline style="display:none;"></video>
 
         <div class="button-row">
           <button type="button" id="openCameraBtn"> Open Camera</button>
@@ -21,24 +22,9 @@
           <button type="submit" id="submitBtn" disabled>Submit</button>
         </div>
 
-        <video id="video" autoplay playsinline style="display:none;"></video>
 
         <div id="previewContainer"></div>
       </form>
-    </div>
-
-    <!-- Right side: Table -->
-    <div class="table-section">
-      <h2>Registered Users</h2>
-      <table id="userTable">
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Images</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
     </div>
   </div>
 

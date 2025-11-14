@@ -12,7 +12,6 @@ let stream = null;
 
 // Replace with your API URLs
 const API_POST_URL = 'https://example.com/api/register';
-const API_GET_URL = 'https://example.com/api/users';
 
 // Open the camera
 openCameraBtn.addEventListener('click', async () => {
@@ -135,36 +134,3 @@ form.addEventListener('submit', async (e) => {
     alert('Error submitting form.');
   }
 });
-
-// Fetch and display users
-async function loadUserTable() {
-  try {
-    const response = await fetch(API_GET_URL);
-    const users = await response.json();
-    userTableBody.innerHTML = '';
-
-    users.forEach(user => {
-      const row = document.createElement('tr');
-      const nameCell = document.createElement('td');
-      nameCell.textContent = user.username;
-
-      const imgCell = document.createElement('td');
-      user.images.forEach(imgUrl => {
-        const img = document.createElement('img');
-        img.src = imgUrl;
-        img.width = 50;
-        img.style.marginRight = '5px';
-        imgCell.appendChild(img);
-      });
-
-      row.appendChild(nameCell);
-      row.appendChild(imgCell);
-      userTableBody.appendChild(row);
-    });
-  } catch (error) {
-    console.error('Error fetching users:', error);
-  }
-}
-
-// Initial load
-loadUserTable();
